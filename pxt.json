@@ -1,5 +1,5 @@
 {
-    "name": "sistema inmune",
+    "name": "sistema inmune - Copia",
     "description": "",
     "dependencies": {
         "device": "*"
@@ -10,17 +10,37 @@
         "README.md",
         "assets.json",
         "images.g.jres",
-        "images.g.ts"
+        "images.g.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "2.0.56",
+        "target": "4.0.12",
         "targetId": "arcade"
     },
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "blocksprj",
+    "palette": [
+        "#000000",
+        "#B59A7B",
+        "#928F81",
+        "#CFC6B5",
+        "#FFFFFF",
+        "#D7BD9B",
+        "#50544F",
+        "#B47578",
+        "#B0181C",
+        "#874349",
+        "#A7434D",
+        "#E41216",
+        "#5C406c",
+        "#E5CDC4",
+        "#91463d",
+        "#000000"
+    ]
 }
