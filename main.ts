@@ -1,19 +1,3 @@
-controller.right.onEvent(ControllerButtonEvent.Released, function () {
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`quieto derecha`,
-    200,
-    false
-    )
-})
-controller.left.onEvent(ControllerButtonEvent.Released, function () {
-    animation.runImageAnimation(
-    mySprite,
-    assets.animation`quieto izquierda`,
-    200,
-    false
-    )
-})
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     mySprite,
@@ -28,6 +12,14 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     assets.animation`caminar izquierda`,
     170,
     true
+    )
+})
+controller.left.onEvent(ControllerButtonEvent.Released, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`quieto izquierda`,
+    200,
+    false
     )
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -46,6 +38,14 @@ info.onScore(100, function () {
 })
 info.onScore(200, function () {
     game.gameOver(true)
+})
+controller.right.onEvent(ControllerButtonEvent.Released, function () {
+    animation.runImageAnimation(
+    mySprite,
+    assets.animation`quieto derecha`,
+    200,
+    false
+    )
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
@@ -191,11 +191,6 @@ scene.cameraFollowSprite(mySprite)
 tiles.placeOnRandomTile(myEnemy, sprites.builtin.forestTiles0)
 tiles.placeOnRandomTile(mySprite, assets.tile`miMosaico0`)
 info.setLife(5)
-game.onUpdateInterval(15000, function () {
-    myEnemy = sprites.create(assets.image`miImagen1`, SpriteKind.Enemy)
-    tiles.placeOnRandomTile(myEnemy, sprites.builtin.forestTiles0)
-    myEnemy.follow(mySprite, 30)
-})
 forever(function () {
     if (controller.B.isPressed() && controller.left.isPressed()) {
         animation.runImageAnimation(
@@ -315,4 +310,9 @@ forever(function () {
         false
         )
     }
+})
+game.onUpdateInterval(10000, function () {
+    myEnemy = sprites.create(assets.image`miImagen1`, SpriteKind.Enemy)
+    tiles.placeOnRandomTile(myEnemy, sprites.builtin.forestTiles0)
+    myEnemy.follow(mySprite, 30)
 })
